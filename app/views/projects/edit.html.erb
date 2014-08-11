@@ -1,0 +1,9 @@
+<h1> Edit this Project </h1>
+
+<%= form_for @project do |f| %>
+	Title: <%= f.text_field :title %>
+	Text: <%= f.text_field :text %>
+	<%= f.submit 'Edit' %>
+<% end %>
+
+<%= link_to 'List', projects_path %>

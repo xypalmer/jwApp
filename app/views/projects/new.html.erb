@@ -1,0 +1,7 @@
+<h1>Create New Project</h1>
+
+<%= form_for @project do |f| %>
+	Title: <%= f.text_field :title %>
+	Text: <%= f.text_field :text %>
+	<%= f.submit 'Create' %>
+<% end %>

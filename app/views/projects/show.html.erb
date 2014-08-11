@@ -1,0 +1,5 @@
+<%= @project.title %><br />
+<%= @project.text %>
+<%= link_to 'Back to the List', projects_path %>
+<%= link_to 'Delete this Project', @project, method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
+<%= link_to 'Edit this Project', edit_project_path(@project) %>
