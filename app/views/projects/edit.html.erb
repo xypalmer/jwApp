@@ -2,8 +2,12 @@
 
 <%= form_for @project do |f| %>
 	Title: <%= f.text_field :title %>
-	Text: <%= f.text_field :text %>
+	Text: <%= f.text_area :text, :style => "display: none" %>
 	<%= f.submit 'Edit' %>
 <% end %>
+
+<iframe id="writeHere" style="width:500px; height:300px;"></iframe>
+
+<button ng-click="submit_form2()">test2</button>
 
 <%= link_to 'List', projects_path %>

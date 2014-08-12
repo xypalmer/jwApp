@@ -2,6 +2,13 @@
 
 <%= form_for @project do |f| %>
 	Title: <%= f.text_field :title %>
-	Text: <%= f.text_field :text %>
+	<%= f.text_field :text, :style => 'display: none' %>
 	<%= f.submit 'Create' %>
 <% end %>
+
+<button type='button' ng-click="boldText()">Bold</button>
+	<button type='button' ng-click="italicizeText()">Italicize</button>
+
+<iframe id="writeHere" style="width:500px; height:300px;"></iframe>
+
+<button ng-click="submit_form()">Test</button>
