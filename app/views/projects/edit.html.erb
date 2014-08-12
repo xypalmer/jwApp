@@ -6,8 +6,8 @@
 	<%= f.submit 'Edit' %>
 <% end %>
 
-<iframe id="writeHere" style="width:500px; height:300px;"></iframe>
+<iframe ng-init="submit_form2()" id="writeHere" style="width:500px; height:300px;"></iframe>
 
-<button ng-click="submit_form2()">test2</button>
+<button ng-click="submit_form()">Test</button>
 
 <%= link_to 'List', projects_path %>

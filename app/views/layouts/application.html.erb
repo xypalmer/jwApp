@@ -2,11 +2,9 @@
 <html ng-app="jwApp">
 <head>
   <title>JwApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
 </head>
-<body onload="myFunction()" ng-controller="jwController">
+<body ng-init="myFunction()" ng-controller="jwController">
 
 	<% if current_user %>
 	<%= link_to "Log out", sessions_path, method: :delete %>
@@ -15,6 +13,9 @@
 	<%= link_to "Log in", new_sessions_path %>
 	<% end %>
 <%= yield %>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.js"></script> -->
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </body>
 </html>
