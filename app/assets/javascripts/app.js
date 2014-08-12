@@ -3,6 +3,8 @@ var jwApp = angular.module('jwApp', []);
 
 jwApp.controller('jwController', function($scope) {
 
+  $scope.test = "test";
+
   if (document.queryCommandSupported('insertBrOnReturn') == true) {
     console.log('working');
     document.execCommand('insertBrOnReturn', false, false)
@@ -34,20 +36,18 @@ $scope.underlineText = function ()
         document.execCommand("underline", false, ""); 
         console.log("underline");
      }
-$scope.submit_form = function () {
-  document.getElementById("project_text").value = document.getElementById('writeHere').contentWindow.document.body.innerHTML;
+$scope.savetotfield = function () {
+  document.getElementById("project_text").value = document.getElementById('writeHere').innerHTML;
 }
 
-$scope.submit_form2 = function () {
-  document.getElementById('writeHere').contentWindow.document.body.innerHTML = document.getElementById("project_text").value;
-}
+// $scope.submit_form2 = function () {
+//   document.getElementById('writeHere').contentWindow.document.body.innerHTML = document.getElementById("project_text").value;
+// }
 
-// $scope.iframeW = document.getElementById('writeHere').contentWindow.document.body.innerHTML;
-
-// $scope.$watch('iframeW', function (newValue, oldValue) {
-//   $scope.submit_form();
-//   console.log('changed');
-// }, true);
+$scope.$watch('test', function (newValue, oldValue) {
+  $scope.savetotfield();
+  console.log('changed');
+}, true);
 
 })
 
