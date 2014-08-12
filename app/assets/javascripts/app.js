@@ -1,9 +1,7 @@
 var jwApp = angular.module('jwApp', []);
 
 
-jwApp.controller('jwController', function($scope) {
-
-  $scope.test = "test";
+jwApp.controller('jwController', function($scope, $timeout) {
 
   if (document.queryCommandSupported('insertBrOnReturn') == true) {
     console.log('working');
@@ -44,10 +42,15 @@ $scope.savetotfield = function () {
 //   document.getElementById('writeHere').contentWindow.document.body.innerHTML = document.getElementById("project_text").value;
 // }
 
-$scope.$watch('test', function (newValue, oldValue) {
-  $scope.savetotfield();
-  console.log('changed');
-}, true);
+$scope.test = document.getElementById("project_text").value;
+
+  $timeout(function() {
+    $scope.$watch('test', function (newValue, oldValue) {
+    $scope.savetotfield();
+    console.log('changed');
+    }, true);
+  }, 0.00001);
+
 
 })
 

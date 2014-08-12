@@ -2,9 +2,10 @@
 
 <%= form_for @project do |f| %>
 	Title: <%= f.text_field :title %>
-	<%= f.text_field :text, :style => 'display: none' %>
+	<%= f.text_field :text %>
 	<%= f.submit 'Create'%>
 
+<!-- , :style => 'display: none' -->
 <% end %>
 
 	<button type='button' ng-click="boldText()">Bold</button>
@@ -12,5 +13,3 @@
 	<button type='button' ng-click="underlineText()">Underline</button>
 
 <div hello contenteditable="true" id="writeHere" ng-model="test" style="width:500px; height:300px;" design-mode="on"></div>
-
-<button ng-click="submit_form()">Test</button>
