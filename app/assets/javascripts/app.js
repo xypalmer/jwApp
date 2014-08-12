@@ -3,6 +3,21 @@ var jwApp = angular.module('jwApp', []);
 
 jwApp.controller('jwController', function($scope) {
 
+  if (document.queryCommandSupported('insertBrOnReturn') == true) {
+    console.log('working');
+    document.execCommand('insertBrOnReturn', false, false)
+  }
+
+  function returnparagraph(keyEvent) {
+       if (keyEvent.keyCode == 13) {
+      console.log('return');
+    
+       document.execCommand('formatBlock', false, 'p');
+      }
+  }
+
+  document.onkeydown = returnparagraph;
+
 $scope.boldText = function ()
     {  
         document.execCommand("bold", false, ""); 
