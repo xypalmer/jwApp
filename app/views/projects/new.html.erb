@@ -10,6 +10,8 @@
 	<button type='button' ng-click="boldText()">Bold</button>
 	<button type='button' ng-click="italicizeText()">Italicize</button>
 
-<iframe id="writeHere" style="width:500px; height:300px;"></iframe>
+<div hello contenteditable="true" id="writeHere" ng-model="test" style="width:500px; height:300px;" design-mode="on"></div>
+
+{{test}}
 
 <button ng-click="submit_form()">Test</button>
