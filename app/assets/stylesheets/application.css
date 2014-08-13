@@ -31,7 +31,7 @@ padding-bottom: 5px;
 
 .writebar ul {
 	list-style-type: none;
-	padding: 2px;
+	padding: 0px;
 	float: right;
 	height: 35px;
 }
@@ -57,7 +57,7 @@ ul {
 }
 
 .writebar ul li button:hover {
-	background-color: #f8f8f8;
+	background-color: #FFEDF6;
 }
 
 
@@ -65,9 +65,8 @@ ul {
 	width: 30px;
 	height: 30px;
 	float: right;
-	margin-left: 20px;
+	margin-right: 5px;
 	border-radius: 50%;
-	margin-top: 2px;
 }
 
 .bgoption1 {
@@ -98,12 +97,30 @@ ul {
 	background-color: white;
 }
 .railssubmit input[type="submit"]:hover {
+	background-color: #FFEDF6;
+}
+
+.bluestyle {
 	background-color: #f8f8f8;
+	font-family: courier;
 }
 
-.edit_project {
-	margin-top: 2px;
+.orangestyle {
+	background-color: #FFF5ED;
+	font-family: Arial;
 }
 
+#writehere {
+	position: absolute;
+	width: 80%;
+	height: calc(100% - 60px);
+	float: left;
+	overflow-y: scroll;
+	padding: 5%;
+	outline: none;
+}
 
+.container-fluid {
+	margin-top: 5px;
+}
 

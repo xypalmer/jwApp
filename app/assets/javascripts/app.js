@@ -3,6 +3,19 @@ var jwApp = angular.module('jwApp', []);
 
 jwApp.controller('jwController', function($scope, $timeout) {
 
+  $scope.changeS = 1;
+
+  $scope.bluestyle = function () {
+    $scope.changeS = 0;
+  }
+
+  $scope.orangestyle = function () {
+    console.log("orange");
+    $scope.changeS = 1;
+    console.log($scope.changeS);
+  }
+  
+
   if (document.queryCommandSupported('insertBrOnReturn') == true) {
     console.log('working');
     document.execCommand('insertBrOnReturn', false, false)
@@ -35,7 +48,7 @@ $scope.underlineText = function ()
         console.log("underline");
      }
 $scope.savetotfield = function () {
-  document.getElementById("project_text").value = document.getElementById('writeHere').innerHTML;
+  document.getElementById("project_text").value = document.getElementById('writehere').innerHTML;
 }
 
 // $scope.submit_form2 = function () {

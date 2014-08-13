@@ -1,4 +1,4 @@
-<nav id="navid" class="navbar navbar-default" role="navigation">
+<nav id="navid" class="navbar navbar-default" role="navigation" ng-class="{orangestyle: changeS == 1}">
 	<div class="container-fluid">
 		<div class="logo"></div>
 		<ul class="nav navbar-nav navbar-right">
@@ -42,14 +42,14 @@
 				<%= f.submit 'Save'%></div>
 				<% end %>
 			<ul>
-				<li><button><b>B</b></button>
-				<li><button><i>I</i></button>
-				<li><button><u>U</u></button>
+				<li><button ng-click="boldText()"><b>B</b></button>
+				<li><button ng-click="italicizeText()"><i>I</i></button>
+				<li><button ng-click="underlineText()"><u>U</u></button>
 				<li><button>T</button>
 			</ul>
 			<div class="bgchange">
-				<div class="bgoption1"></div>
-				<div class="bgoption2"></div>
+				<div class="bgoption1" ng-click="orangestyle()"></div>
+				<div class="bgoption2" ng-click="bluestyle()"></div>
 			</div>
 		</div>
 		<% else %>
