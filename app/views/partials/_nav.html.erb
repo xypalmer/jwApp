@@ -36,18 +36,21 @@
 		</ul>
 		<% if current_page?(new_project_path) || current_page?(edit_project_path(@project)) %>
 		<div class="writebar">
-			<ul>
-				<li><button>Bg</button>
-				<li><button>B</button>
-				<li><button>I</button>
-				<li><button>U</button>
-				<li><button>T</button>
-				</ul>
-					<div class="railssubmit"><%= form_for @project do |f| %>
+			<div class="railssubmit"><%= form_for @project do |f| %>
 					Title: <%= f.text_field :title %>
 					<%= f.text_field :text, :style => 'display: none' %></li>
-				<%= f.submit 'Create'%></div>
+				<%= f.submit 'Save'%></div>
 				<% end %>
+			<ul>
+				<li><button><b>B</b></button>
+				<li><button><i>I</i></button>
+				<li><button><u>U</u></button>
+				<li><button>T</button>
+			</ul>
+			<div class="bgchange">
+				<div class="bgoption1"></div>
+				<div class="bgoption2"></div>
+			</div>
 		</div>
 		<% end %>
 		
