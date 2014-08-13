@@ -1,13 +1,5 @@
 <h1>Create New Project</h1>
 
-<%= form_for @project do |f| %>
-	Title: <%= f.text_field :title %>
-	<%= f.text_field :text %>
-	<%= f.submit 'Create'%>
-
-<!-- , :style => 'display: none' -->
-<% end %>
-
 	<button type='button' ng-click="boldText()">Bold</button>
 	<button type='button' ng-click="italicizeText()">Italicize</button>
 	<button type='button' ng-click="underlineText()">Underline</button>

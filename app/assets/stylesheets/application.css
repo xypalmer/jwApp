@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap';
+
+.navbar-nav > li > a {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.navbar {
+	min-height: 30px;
+}
+
+.dropdown-menu {
+	min-width: 100px;
+}
+
+.writebar ul {
+	list-style-type: none;
+	padding: 0px;
+	float: left;
+	height: 35px;
+}
+
+.writebar ul li {
+	display: inline;
+}
+.railssubmit {
+	float: right;
+}

@@ -1,11 +1,5 @@
 <h1> Edit this Project </h1>
 
-<%= form_for @project do |f| %>
-	Title: <%= f.text_field :title %>
-	Text: <%= f.text_area :text %>
-	<%= f.submit 'Edit' %>
-<% end %>
-
 <div contenteditable="true" hello ng-model="test" ng-init="submit_form2()" id="writeHere" style="width:500px; height:300px;"></div>
 
 	<button type='button' ng-click="boldText()">Bold</button>
