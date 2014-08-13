@@ -1,8 +1,9 @@
-<h1> Projects </h1>
-
+<div class="projectscontainer">
 <% @projects.each do |p| %>
+<div class="projectholder">
 <%= p.title %>
 <%= link_to 'Edit', edit_project_path(p) %>
+</div>
 <% end %>
 
-<%= link_to 'New Project', new_project_path %>
+</div>

@@ -34,7 +34,7 @@
 
 			<% end %>
 		</ul>
-		<% if current_page?(new_project_path) || current_page?(edit_project_path(@project)) %>
+		<% if current_page?(new_project_path) || current_page?(controller: 'projects', action: 'edit', :id => id_for_route_verification)  %>
 		<div class="writebar">
 			<div class="railssubmit"><%= form_for @project do |f| %>
 					Title: <%= f.text_field :title %>
@@ -52,6 +52,7 @@
 				<div class="bgoption2"></div>
 			</div>
 		</div>
+		<% else %>
 		<% end %>
 		
 	</div>

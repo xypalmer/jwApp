@@ -6,7 +6,7 @@
 </head>
 <body  ng-controller="jwController">
 
-<%= render 'partials/nav' %>
+<%= render :partial => 'partials/nav', :locals => {:id_for_route_verification => params[:id] || 0} %>
 
 <%= yield %>
 

@@ -1,3 +1,21 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.projectscontainer {
+	position: absolute;
+	width: 15%;
+	height: calc(100% - 60px);
+	float: left;
+	overflow-y: scroll;
+	border: 1px solid;
+	border-color: blue;
+}
+
+.projectholder {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid;
+	border-color: blue;
+	float: left;
+}
