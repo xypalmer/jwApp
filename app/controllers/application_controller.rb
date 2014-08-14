@@ -8,6 +8,18 @@ class ApplicationController < ActionController::Base
   	@current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def session_new
+  	@session_new ||= User.new
+  end
+
+  def user_new
+  	@user_new ||= User.new
+  end
+
   helper_method :current_user 
+
+  helper_method :user_new
+
+  helper_method :session_new
 end
 

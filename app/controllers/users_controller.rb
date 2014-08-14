@@ -14,11 +14,14 @@ class UsersController < ApplicationController
   def create
 	@user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation))
 	if @user.save
-		redirect_to user_projects
+		redirect_to projects_path
 	else
 		render 'new'
 	end
 end
+
+def home
+	end
 
 def edit
 end

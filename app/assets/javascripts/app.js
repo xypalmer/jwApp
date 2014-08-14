@@ -63,8 +63,8 @@ $scope.test = document.getElementById("project_text").value;
 
   $timeout(function() {
     $scope.$watch('test', function (newValue, oldValue) {
-    $scope.savetotfield();
-    console.log('changed');
+      $scope.savetotfield();
+      console.log('changed');
     }, true);
   }, 0.00001);
 
