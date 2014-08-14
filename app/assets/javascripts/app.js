@@ -27,7 +27,7 @@ jwApp.controller('jwController', function($scope, $timeout) {
     
       document.execCommand('formatBlock', false, 'p');
     }
-    else if (keyEvent.keyCode == 9) {
+    else if (keyEvent.keyCode == 9 && document.getElementById('writehere').focus ) {
       keyEvent.preventDefault();
       console.log(keyEvent.keyCode); 
     }

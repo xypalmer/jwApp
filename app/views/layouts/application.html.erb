@@ -2,11 +2,13 @@
 <html ng-app="jwApp">
 <head>
   <title>JwApp</title>
-
 </head>
 <body  ng-controller="jwController">
 
 <%= render :partial => 'partials/nav', :locals => {:id_for_route_verification => params[:id] || 0} %>
+
+
+<%= render 'partials/sidebar' %>
 
 <%= yield %>
 

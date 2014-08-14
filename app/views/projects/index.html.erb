@@ -3,6 +3,7 @@
 <div class="projectholder">
 <%= p.title %>
 <%= link_to 'Edit', edit_project_path(p) %>
+<%= link_to 'Delete', project_path(p), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
 <br />
 <%= p.creation_date %>
 

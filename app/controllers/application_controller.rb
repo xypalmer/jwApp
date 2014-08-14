@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
   	@user_new ||= User.new
   end
 
+  def projects_all 
+    @projects_all ||= current_user.projects.all
+  end
+
+  helper_method :projects_all
+
   helper_method :current_user 
 
   helper_method :user_new
