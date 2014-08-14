@@ -22,11 +22,15 @@ jwApp.controller('jwController', function($scope, $timeout) {
   }
 
   function returnparagraph(keyEvent) {
-       if (keyEvent.keyCode == 13) {
+    if (keyEvent.keyCode == 13) {
       console.log('return');
     
-       document.execCommand('formatBlock', false, 'p');
-      }
+      document.execCommand('formatBlock', false, 'p');
+    }
+    else if (keyEvent.keyCode == 9) {
+      keyEvent.preventDefault();
+      console.log(keyEvent.keyCode); 
+    }
   }
 
   document.onkeydown = returnparagraph;

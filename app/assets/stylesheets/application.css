@@ -16,38 +16,45 @@
 
 @import 'bootstrap';
 
-.navbar-nav > li > a {
-padding-top: 5px;
-padding-bottom: 5px;
+#navid {
+	height: 45px;
+	background-color: #f8f8f8;
 }
 
-.navbar {
-	min-height: 30px;
+.navcontainer {
+	padding-top: 7px;
+}
+
+.logo {
+	float: left;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+/*login css*/
+.login {
+	float: right;
+	font-family: arial;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
 .dropdown-menu {
 	min-width: 100px;
 }
 
-.writebar ul {
-	list-style-type: none;
-	padding: 0px;
+.navbar-nav > li > a {
+padding: 0px;
+}
+/*<--end*/
+
+/*bold, italics, underline, time*/
+.buttonbar {
 	float: right;
-	height: 35px;
+	margin-right: 20px;
 }
 
-.writebar ul li {
-	display: inline;
-}
-.railssubmit {
-	float: left;
-}
-
-ul {
-	margin: 0;
-}
-
-.writebar ul li button {
+.buttonclass {
 	width: 30px;
 	height: 30px;
 	outline: none;
@@ -55,12 +62,9 @@ ul {
 	margin-left: 7px;
 	background-color: white;
 }
+/*<-----end*/
 
-.writebar ul li button:hover {
-	background-color: #FFEDF6;
-}
-
-
+/*background and font style changer*/
 .bgchange {
 	width: 30px;
 	height: 30px;
@@ -84,12 +88,18 @@ ul {
 	background-color: #adcde2;
 	border-radius: 0px 15px 15px 0px;
 }
+/*<---end*/
 
+/*rails form for title*/
 #project_title {
 	border-radius: 10px;
 	outline: none;
 	border-style: solid;
 	border-color: white;
+}
+
+.railssubmit {
+	float: left;
 }
 
 .railssubmit input[type="submit"] {
@@ -99,6 +109,7 @@ ul {
 .railssubmit input[type="submit"]:hover {
 	background-color: #FFEDF6;
 }
+/*<---end*/
 
 .bluestyle {
 	background-color: #f8f8f8;
@@ -113,14 +124,10 @@ ul {
 #writehere {
 	position: absolute;
 	width: 80%;
-	height: calc(100% - 60px);
+	height: calc(100% - 45px);
 	float: left;
 	overflow-y: scroll;
 	padding: 5%;
 	outline: none;
-}
-
-.container-fluid {
-	margin-top: 5px;
 }
 

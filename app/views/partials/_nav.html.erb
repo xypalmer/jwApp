@@ -1,59 +1,62 @@
-<nav id="navid" class="navbar navbar-default" role="navigation" ng-class="{orangestyle: changeS == 1}">
-	<div class="container-fluid">
-		<div class="logo"></div>
-		<ul class="nav navbar-nav navbar-right">
+<nav id="navid">
+	<div class="navcontainer">
+		<div class="logo">
 			<% if current_user %>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						Hi, <%= current_user.username %>
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" role="menu">
-						<li>
-						<%= link_to 'Log out', sessions_path, method: :delete %>
-						</li>
-					</ul>
-				</li>
-
+					<%= link_to 'justWrite', projects_path %>
 			<% else %>
-			<li class="dropdown">
-
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				Join
-				</a>
-
-				<ul class="dropdown-menu" role="menu">
-					<li>
-						<%= link_to "Sign up", new_user_path %>
+					<%= link_to 'justWrite', home_users_path %>
+			<% end %>
+		</div>
+		<div class="login">
+			<% if current_user %>
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Hi, <%= current_user.username %>
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+							<%= link_to 'Log out', sessions_path, method: :delete %>
+							</li>
+						</ul>
 					</li>
-					<li>
-						<%= link_to 'Log in', new_sessions_path  %>	
+			<% else %>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Join
+						</a>
+
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<%= link_to "Sign up", new_user_path %>
+							</li>
+							<li>
+								<%= link_to 'Log in', new_sessions_path  %>	
+							</li>
+						</ul>
 					</li>
 				</ul>
-			</li>
-
 			<% end %>
-		</ul>
+		</div>
 		<% if current_page?(new_project_path) || current_page?(controller: 'projects', action: 'edit', :id => id_for_route_verification)  %>
-		<div class="writebar">
-			<div class="railssubmit"><%= form_for @project do |f| %>
-					Title: <%= f.text_field :title %>
-					<%= f.text_field :text, :style => 'display: none' %></li>
-				<%= f.submit 'Save'%></div>
-				<% end %>
-			<ul>
-				<li><button ng-click="boldText()"><b>B</b></button>
-				<li><button ng-click="italicizeText()"><i>I</i></button>
-				<li><button ng-click="underlineText()"><u>U</u></button>
-				<li><button>T</button>
-			</ul>
+			<div class="railssubmit">
+					<%= form_for @project do |f| %>
+						Title: <%= f.text_field :title %>
+						<%= f.text_field :text, :style => 'display: none' %></li>
+					<%= f.submit 'Save'%>
+					<% end %>
+			</div>
+			<div class="buttonbar">
+				<button class="buttonclass" ng-click="boldText()"><b>B</b></button>
+				<button class="buttonclass" ng-click="italicizeText()"><i>I</i></button>
+				<button class="buttonclass" ng-click="underlineText()"><u>U</u></button>
+				<button class="buttonclass">T</button>
+			</div>
 			<div class="bgchange">
 				<div class="bgoption1" ng-click="orangestyle()"></div>
 				<div class="bgoption2" ng-click="bluestyle()"></div>
 			</div>
-		</div>
-		<% else %>
 		<% end %>
-		
 	</div>
 </nav>
