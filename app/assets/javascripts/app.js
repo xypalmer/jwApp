@@ -69,6 +69,50 @@ $scope.test = document.getElementById("project_text").value;
     }, true);
   }, 0.00001);
 
+  $scope.timemins = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+
+$scope.minoption = $scope.timemins[6];
+
+$scope.showmins = $scope.minoption;
+$scope.showsecs = 59;
+
+$scope.timerstart = function () {
+  if ($scope.showmins != 0 ) {
+    $scope.countstart();
+  }
+}
+
+$scope.countstart = function () {
+  $scope.showsecs--;
+  if ($scope.showsecs == 0) {
+    $scope.showsecs = 59;
+    $scope.showmins--;
+  }
+  $timeout(function () {
+    $scope.countstart()
+  }, 1000)
+}
+// $scope.timerstart = function () {
+//   $scope.showmin = $scope.minoption - 1;
+//   $scope.showsecs = 59;
+//   for (i = $scope.minoption; i > 0; i -= 1 ) {
+//     for (j = 60; j > 0; j -= 1) {
+//       $scope.showsecs = $scope.showsecs - 1;
+//       sectimeout();
+//     }
+//   }
+// }
+
+// var sectimeout = function () {
+//     $timeout(function() {
+//       console.log('test');
+//       if ($scope.showsecs == 0) {
+//         $scope.showsecs = 59;
+//         $scope.showmin = $scope.showmin - 1;
+//       }
+//     }, 1000);
+// }
+
 
 })
 

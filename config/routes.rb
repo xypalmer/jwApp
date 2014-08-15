@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+
   resources :users
   resources :projects
   
   resource :sessions, only: [:new, :create, :destroy]
+
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
 
   root 'projects#new'
   # The priority is based upon order of creation: first created -> highest priority.
