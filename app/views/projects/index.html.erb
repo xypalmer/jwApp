@@ -1,11 +1,10 @@
 <div class="projectscontainer">
 <% @projects.each do |p| %>
 <div class="projectholder">
-<%= p.title %>
+<%= p.title %> <%= p.creation_date %>
 <%= link_to 'Edit', edit_project_path(p) %>
 <%= link_to 'Delete', project_path(p), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
-<br />
-<%= p.creation_date %>
+
 
 </div>
 <% end %>

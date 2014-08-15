@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   def create
   	@project = current_user.projects.new(params.require(:project).permit(:title, :text))
   	if @project.save
-      redirect_to projects_path
+      redirect_to new_project_path
   	end
   end
 
@@ -27,14 +27,14 @@ class ProjectsController < ApplicationController
     if current_user && current_user.id == Project.find(params[:id]).user_id
   	 @project = Project.find(params[:id])
    else
-    redirect_to projects_path
+    redirect_to new_project_path
    end
   end
   
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params.require(:project).permit(:title, :text))
-      redirect_to projects_path
+      redirect_to new_project_path
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id]).destroy
-    redirect_to projects_path
+    redirect_to new_project_path
   end
 
 

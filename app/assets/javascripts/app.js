@@ -3,6 +3,7 @@ var jwApp = angular.module('jwApp', []);
 
 jwApp.controller('jwController', function($scope, $timeout) {
 
+  document.getElementById('writehere').focus();
   $scope.changeS = 1;
 
   $scope.bluestyle = function () {
@@ -27,7 +28,7 @@ jwApp.controller('jwController', function($scope, $timeout) {
     
       document.execCommand('formatBlock', false, 'p');
     }
-    else if (keyEvent.keyCode == 9 && document.getElementById('writehere').focus ) {
+    else if (keyEvent.keyCode == 9 && document.getElementById('writehere').focus() ) {
       keyEvent.preventDefault();
       console.log(keyEvent.keyCode); 
     }

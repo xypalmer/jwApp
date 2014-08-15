@@ -2,15 +2,24 @@
 <html ng-app="jwApp">
 <head>
   <title>JwApp</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body  ng-controller="jwController">
-
+<body  ng-controller="jwController" class="bluestyle" ng-class="{peachstyle: changeS == 1}">
 <%= render :partial => 'partials/nav', :locals => {:id_for_route_verification => params[:id] || 0} %>
 
-
+			<% if user_new.errors.any? %>
+				<% user_new.errors.full_messages.each do |value| %>	
+				<div class="alert alert-danger" role="alert">
+				<%= value %>
+				</div>
+				<% end %>
+			<% end %>
 <%= render 'partials/sidebar' %>
 
 <%= yield %>
+
+
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

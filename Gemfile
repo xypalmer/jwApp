@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 
+gem 'mail_form'
+
+gem 'simple_form'
+
 gem 'mongoid'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

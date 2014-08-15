@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		u = User.where(email: params[:user][:email]).first
 		if u && u.authenticate(params[:user][:password])
 			session[:user_id] = u.id.to_s
-			redirect_to projects_path
+			redirect_to new_project_path
 		else
 			redirect_to new_sessions_path
 		end
