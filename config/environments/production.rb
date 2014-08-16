@@ -8,14 +8,14 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   address: "smtp.gmail.com",
   port: 587,
-  domain: ENV["gmail.com"],
+  domain: "gmail.com",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV["justwriteapp@gmail.com"],
-  password: ENV["generalassembly"]
+  user_name: "justwriteapp@gmail.com",
+  password: "generalassembly"
   }
 
-  config.action_mailer.default_url_options = { :host => 'justwrite.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
