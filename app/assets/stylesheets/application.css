@@ -196,4 +196,17 @@ color: #468847;
 text-align: left;
 }
 
+.simple_form input {
+	display: inline;
+	border-radius: 10px;
+}
 
+.simple_form input[type="submit"] {
+	border-radius: 10px;
+	background-color: white;
+	height: 28px;
+}
+
+.emailsub {
+	float: left;
+}

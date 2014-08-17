@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 end
 
 def home
-	end
+end
 
 def edit
 end

@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
     @projects_all ||= current_user.projects.all
   end
 
+  def send_email
+    @contact ||= Contact.new
+  end
+
+  helper_method :send_email
+
   helper_method :projects_all
 
   helper_method :current_user 

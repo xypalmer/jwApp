@@ -53,23 +53,29 @@ $scope.underlineText = function ()
         console.log("underline");
      }
 $scope.savetotfield = function () {
-  document.getElementById("project_text").value = document.getElementById('writehere').innerHTML;
+  if ( document.getElementById("project_text") ) {
+    document.getElementById("project_text").value = document.getElementById('writehere').innerHTML;
+  }
+  else if ( document.getElementById("contact_message") ) {
+    document.getElementById("contact_message").value = document.getElementById('writehere').innerHTML;
+  }
 }
 
 // $scope.submit_form2 = function () {
 //   document.getElementById('writeHere').contentWindow.document.body.innerHTML = document.getElementById("project_text").value;
 // }
-
+if ( document.getElementById("project_text") ) {
 $scope.test = document.getElementById("project_text").value;
+}
 
-  $timeout(function() {
-    $scope.$watch('test', function (newValue, oldValue) {
-      $scope.savetotfield();
-      console.log('changed');
-    }, true);
-  }, 0.00001);
+$timeout(function() {
+  $scope.$watch('test', function (newValue, oldValue) {
+    $scope.savetotfield();
+    console.log('changed');
+  }, true);
+}, 0.00001);
 
-  $scope.timemins = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+$scope.timemins = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
 
 $scope.minoption = $scope.timemins[6];
 

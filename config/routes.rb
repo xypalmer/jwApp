@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
-  root 'projects#new'
+  get 'users/home' => 'users#home', as: :home_users
+  root 'users#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
