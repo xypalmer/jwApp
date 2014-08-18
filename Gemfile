@@ -6,6 +6,8 @@ gem 'mail_form'
 
 gem 'simple_form'
 
+gem 'rails_12factor'
+
 gem 'mongoid'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
