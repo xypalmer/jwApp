@@ -22,6 +22,9 @@ class UsersController < ApplicationController
 end
 
 def home
+	if current_user 
+		redirect_to new_project_path
+	end
 end
 
 def edit

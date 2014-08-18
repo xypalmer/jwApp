@@ -13,7 +13,11 @@ class ProjectsController < ApplicationController
   end
 
   def new
-  	@project = Project.new
+    if current_user 
+  	 @project = Project.new
+    else 
+      redirect_to root_path
+    end
   end
 
   def create

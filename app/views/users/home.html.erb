@@ -1,2 +1,9 @@
-  <span href="#menu-toggle" class="glyphicon glyphicon-chevron-left togglebutton" id="menu-toggle"></span>
 <div class="bluefont" ng-class="{peachfont: changeS == 1}" hello contenteditable="true" id="writehere" ng-model="test" design-mode="on"></div>
+
+<div ng-show="starting == 1" class="startup startupbg">
+	<div class="startoptions">
+		<p>Enter your email: <input ng-model="enteremail" id="emailinput" data-placement="top" data-content="Invalid Email!"></input><button class="startbuttons" ng-click="saveemail()">Submit</button></p>
+		<p>or</p>
+		<p><button class="startbuttons" data-toggle="modal" data-target="#userModal" ng-click="closestarting()">Sing up</button> / <button class="startbuttons" data-toggle="modal" data-target="#loginModal" ng-click="closestarting()">Log in</button></p>
+	</div>
+</div>

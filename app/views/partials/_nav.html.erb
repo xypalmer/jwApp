@@ -2,9 +2,9 @@
 	<div class="navcontainer">
 		<div class="logo">
 			<% if current_user %>
-					<%= link_to 'justWrite', projects_path %>
-			<% else %>
 					<%= link_to 'justWrite', new_project_path %>
+			<% else %>
+					<%= link_to 'justWrite', root_path %>
 			<% end %>
 		</div>
 		<div class="login">
@@ -68,9 +68,8 @@
 			<div class="emailsub">
 				<%= simple_form_for send_email do |f| %>
 			    Title: <%= f.input_field :title, :required => true %>
-			    
+			    <div class= "hidden">			    
 			    <%= f.input_field :email %>
-			    <div class= "hidden">
 			    <%= f.text_field :message, :required => true %>
 			      <%= f.input_field :nickname, :hint => 'Leave this field blank!' %>
 			    </div>
@@ -107,7 +106,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" tabindex="-1"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
@@ -115,7 +114,6 @@
 		Username: <%= f.text_field :username %>
 		<br />
 		Password: <%= f.password_field :password %>
-		Email: <%= f.text_field :email %>
 		<%= f.submit "Log in", :class => 'btn btn-primary' %>
 	<% end %>
       </div>
@@ -129,7 +127,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" tabindex="-1"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">

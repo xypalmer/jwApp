@@ -1,7 +1,10 @@
+
 var jwApp = angular.module('jwApp', []);
 
 
 jwApp.controller('jwController', function($scope, $timeout) {
+
+  $scope.starting = 1;
 
   document.getElementById('writehere').focus();
   $scope.changeS = 1;
@@ -28,10 +31,10 @@ jwApp.controller('jwController', function($scope, $timeout) {
     
       document.execCommand('formatBlock', false, 'p');
     }
-    else if (keyEvent.keyCode == 9 && document.getElementById('writehere').focus() ) {
-      keyEvent.preventDefault();
-      console.log(keyEvent.keyCode); 
-    }
+    // else if ( keyEvent.keyCode == 9 && document.getElementById('writehere').hasFocus ) {
+    //     keyEvent.preventDefault();
+    //     console.log(keyEvent.keyCode); 
+    // }
   }
 
   document.onkeydown = returnparagraph;
@@ -52,6 +55,7 @@ $scope.underlineText = function ()
         document.execCommand("underline", false, ""); 
         console.log("underline");
      }
+
 $scope.savetotfield = function () {
   if ( document.getElementById("project_text") ) {
     document.getElementById("project_text").value = document.getElementById('writehere').innerHTML;
@@ -65,7 +69,7 @@ $scope.savetotfield = function () {
 //   document.getElementById('writeHere').contentWindow.document.body.innerHTML = document.getElementById("project_text").value;
 // }
 if ( document.getElementById("project_text") ) {
-$scope.test = document.getElementById("project_text").value;
+  $scope.test = document.getElementById("project_text").value;
 }
 
 $timeout(function() {
@@ -98,27 +102,28 @@ $scope.countstart = function () {
     $scope.countstart()
   }, 1000)
 }
-// $scope.timerstart = function () {
-//   $scope.showmin = $scope.minoption - 1;
-//   $scope.showsecs = 59;
-//   for (i = $scope.minoption; i > 0; i -= 1 ) {
-//     for (j = 60; j > 0; j -= 1) {
-//       $scope.showsecs = $scope.showsecs - 1;
-//       sectimeout();
-//     }
-//   }
-// }
 
-// var sectimeout = function () {
-//     $timeout(function() {
-//       console.log('test');
-//       if ($scope.showsecs == 0) {
-//         $scope.showsecs = 59;
-//         $scope.showmin = $scope.showmin - 1;
-//       }
-//     }, 1000);
-// }
+$scope.closestarting = function () {
+  $scope.starting = 0;
+}
 
+if (document.getElementById("emailinput")) {
+  document.getElementById("emailinput").focus();
+}
+
+$scope.saveemail = function () {
+  var x = document.getElementById("emailinput").value;
+  var atposition = x.indexOf("@");
+  var dotposition = x.lastIndexOf(".");
+  if ( atposition < 1 || dotposition < (atposition + 2) || (dotposition + 2) >= x.length) {
+      $('#emailinput').popover('show');
+      return false;
+  }
+  else {
+    document.getElementById("contact_email").value = $scope.enteremail;
+    $scope.starting = 0;
+  }
+}
 
 })
 
