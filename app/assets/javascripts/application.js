@@ -19,5 +19,3 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-
-  	$('select').selectpicker();

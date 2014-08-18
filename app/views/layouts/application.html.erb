@@ -19,7 +19,12 @@
 
 <%= yield %>
 
-
+ <div ng-show="timerup == 1" class="startup startupbg">
+	<div class="startoptions">
+		Your time is up! Hope you were able to get writing done!
+		<button ng-click="closetimerup()">Keep Writing</button>
+	</div>
+</div>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

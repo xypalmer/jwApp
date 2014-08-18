@@ -65,9 +65,6 @@ $scope.savetotfield = function () {
   }
 }
 
-// $scope.submit_form2 = function () {
-//   document.getElementById('writeHere').contentWindow.document.body.innerHTML = document.getElementById("project_text").value;
-// }
 if ( document.getElementById("project_text") ) {
   $scope.test = document.getElementById("project_text").value;
 }
@@ -79,28 +76,40 @@ $timeout(function() {
   }, true);
 }, 0.00001);
 
-$scope.timemins = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
-
-$scope.minoption = $scope.timemins[6];
-
-$scope.showmins = $scope.minoption;
 $scope.showsecs = 59;
+$scope.timeron = 0;
+$scope.timerup = 0;
+
+$scope.closetimerup = function () {
+  $scope.timerup = 0;
+}
 
 $scope.timerstart = function () {
-  if ($scope.showmins != 0 ) {
+  $scope.timeron = 1;
+  $scope.showmins = $scope.focustimer - 1;
+  if ($scope.focustimer != 0 ) {
     $scope.countstart();
+  }
+  else {
+    $scope.timeron = 0;
   }
 }
 
 $scope.countstart = function () {
-  $scope.showsecs--;
-  if ($scope.showsecs == 0) {
-    $scope.showsecs = 59;
-    $scope.showmins--;
+  if ($scope.showmins == -1) {
+  $scope.timeron = 0;
+  $scope.timerup = 1;
   }
-  $timeout(function () {
-    $scope.countstart()
-  }, 1000)
+  else {
+    $scope.showsecs--;
+    if ($scope.showsecs == 0) {
+      $scope.showsecs = 59;
+      $scope.showmins--;
+    }
+    $timeout(function () {
+      $scope.countstart()
+    }, 1000)
+  }
 }
 
 $scope.closestarting = function () {

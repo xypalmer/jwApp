@@ -47,14 +47,8 @@
 					<% end %>
 			</div>
 			<div class="timerarea">{{showmins}}mins {{showsecs}}secs</div>
-			<div class="dropdown timerbutton">
-				<a href="#" class="timericon dropdown-toggle glyphicon glyphicon-time" data-toggle="dropdown"></a>
-				<ul class="dropdown-menu" role="menu">
-				<select ng-model="minoption" ng-options="min for min in timemins">
-				</select>
-				<button ng-click="timerstart()">Start</button>
-				</ul>
-			</div>
+			<a href="#" class="timericon glyphicon glyphicon-time" ng-click="timerstart()"></a>
+			<input type="number" class="timerinput" ng-model="focustimer"></input>
 			<div class="buttonbar">
 				<button class="buttonclass" ng-click="boldText()"><b>B</b></button>
 				<button class="buttonclass" ng-click="italicizeText()"><i>I</i></button>
@@ -76,15 +70,9 @@
 				<%= f.button :submit, 'Mail' %>
 				<% end %>
 			</div>
-			<div class="timerarea">{{showmins}}mins {{showsecs}}secs</div>
-			<div class="dropdown timerbutton">
-				<a href="#" class="timericon dropdown-toggle glyphicon glyphicon-time" data-toggle="dropdown"></a>
-				<ul class="dropdown-menu" role="menu">
-				<select ng-model="minoption" ng-options="min for min in timemins">
-				</select>
-				<button ng-click="timerstart()">Start</button>
-				</ul>
-			</div>
+			<div class="timerarea"><div ng-show="timeron == 1" class="timershow">{{showmins}}mins {{showsecs}}secs</div></div>
+			<a href="#" class="timericon glyphicon glyphicon-time" ng-click="timerstart()"></a>
+			<input type="number" class="timerinput" ng-model="focustimer"></input>
 			<div class="buttonbar">
 				<button class="buttonclass" ng-click="boldText()"><b>B</b></button>
 				<button class="buttonclass" ng-click="italicizeText()"><i>I</i></button>
@@ -114,7 +102,7 @@
 		Username: <%= f.text_field :username %>
 		<br />
 		Password: <%= f.password_field :password %>
-		<%= f.submit "Log in", :class => 'btn btn-primary' %>
+		<%= f.submit "Log in", :class => 'startbuttons' %>
 	<% end %>
       </div>
       <div class="modal-footer">
@@ -137,7 +125,7 @@
 			<br />
 			Password: <%= f.password_field :password %>
 			Confirm Password <%= f.password_field :password_confirmation %>
-			<%= f.submit "Sign up" %>
+			<%= f.submit "Sign up", :class => 'startbuttons' %>
 			<% end %>
       </div>
       <div class="modal-footer">
