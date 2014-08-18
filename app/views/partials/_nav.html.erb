@@ -66,7 +66,7 @@
 			</div>
 		<% elsif current_page?('/') %>
 			<div class="emailsub">
-				<%= simple_form_for send_email do |f| %>
+				<%= simple_form_for(send_email, :remote => true) do |f| %>
 			    Title: <%= f.input_field :title, :required => true %>
 			    <div class= "hidden">			    
 			    <%= f.input_field :email %>

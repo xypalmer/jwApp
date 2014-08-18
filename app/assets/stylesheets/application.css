@@ -202,6 +202,7 @@ text-align: left;
 .simple_form input {
 	display: inline;
 	border-radius: 10px;
+	outline: none;
 }
 
 .simple_form input[type="submit"] {
