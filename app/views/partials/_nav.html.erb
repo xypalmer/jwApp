@@ -68,9 +68,10 @@
 			<div class="emailsub">
 				<%= simple_form_for send_email do |f| %>
 			    Title: <%= f.input_field :title, :required => true %>
+			    
+			    <%= f.input_field :email %>
 			    <div class= "hidden">
-			    <%= f.input_field :email, :required => true %>
-			    <%= f.text_field :message, :as => :text, :required => true %>
+			    <%= f.text_field :message, :required => true %>
 			      <%= f.input_field :nickname, :hint => 'Leave this field blank!' %>
 			    </div>
 				<%= f.button :submit, 'Mail' %>
